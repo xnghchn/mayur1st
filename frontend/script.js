@@ -4,9 +4,7 @@ async function removeBackground() {
   const formData = new FormData();
   formData.append('file', file);
 
- const response = await fetch('https://http://0.0.0.0:8000/remove-bg', {
-
-
+  const response = await fetch('https://bg-remover-backend-oqgc.onrender.com/remove_bg', {
     method: 'POST',
     body: formData
   });
@@ -25,3 +23,34 @@ async function removeBackground() {
     a.click();
   }
 }
+
+// async function uploadImage() {
+//   const input = document.getElementById("imageInput");
+//   const file = input.files[0];
+//   if (!file) {
+//     alert("Please select an image!");
+//     return;
+//   }
+
+//   const formData = new FormData();
+//   formData.append("file", file);
+
+//   const response = await fetch("https://bg-remover-backend-oqgc.onrender.com/remove_bg", {
+//     method: "POST",
+//     body: formData,
+//   });
+
+//   if (!response.ok) {
+//     alert("Failed to remove background");
+//     return;
+//   }
+
+//   const blob = await response.blob();
+//   const url = URL.createObjectURL(blob);
+
+//   document.getElementById("output").innerHTML = `
+//     <h3>Result:</h3>
+//     <img src="${url}" alt="Processed Image" />
+//     <a href="${url}" download="bg_removed.png">Download</a>
+//   `;
+// }
