@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Background Remover</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Background Remover</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
     <h1>AI Background Remover</h1>
-    <input type="file" id="upload" accept="image/*">
+
+    <div id="drop-area">
+      <input type="file" id="upload" accept="image/*" hidden />
+      <p>Drag & Drop your image here or <span id="browse">Browse</span></p>
+    </div>
+
     <button onclick="removeBackground()">Remove Background</button>
+    <div class="spinner" id="spinner"></div>
+
     <div class="preview">
       <img id="preview" src="" alt="Preview" />
     </div>
+
     <button id="downloadBtn" style="display: none;">Download Result</button>
+    <footer>Made by Mayur ❤️</footer>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

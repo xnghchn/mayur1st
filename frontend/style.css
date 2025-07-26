@@ -1,38 +1,77 @@
 body {
   font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
+  padding: 0;
   background: #f0f0f0;
 }
 
 .container {
+  max-width: 500px;
+  margin: auto;
   text-align: center;
   background: white;
   padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+#drop-area {
+  border: 2px dashed #ccc;
+  padding: 30px;
+  margin: 20px 0;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+  cursor: pointer;
+}
+
+#drop-area:hover {
+  background: #e9f7ff;
+}
+
+#drop-area span {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.spinner {
+  margin: 20px auto;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: none;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 #preview {
   margin-top: 20px;
-  max-width: 300px;
+  max-width: 100%;
   border: 1px solid #ccc;
   padding: 5px;
 }
 
-#downloadBtn {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#downloadBtn:hover {
-  background-color: #0056b3;
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
 }
